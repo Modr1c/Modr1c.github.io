@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Modr1c&#39;s Blog</title>
+  <title>Camera Zoom | Modr1c&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Modr1c&apos;s Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Modr1c&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="Unity简单的相机缩放实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Camera Zoom">
+<meta property="og:url" content="http://yoursite.com/2018/06/10/简单的相机缩放实现/index.html">
 <meta property="og:site_name" content="Modr1c&#39;s Blog">
-<meta property="og:description" content="Modr1c&apos;s Blog">
+<meta property="og:description" content="Unity简单的相机缩放实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-23T08:00:07.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Modr1c&#39;s Blog">
-<meta name="twitter:description" content="Modr1c&apos;s Blog">
+<meta name="twitter:title" content="Camera Zoom">
+<meta name="twitter:description" content="Unity简单的相机缩放实现123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979">
   
     <link rel="alternative" href="/atom.xml" title="Modr1c&#39;s Blog" type="application/atom+xml">
   
@@ -161,184 +162,174 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-简单的相机缩放实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/10/简单的向量操作/" class="archive-article-date">
-  	<time datetime="2018-06-10T07:23:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/10/简单的向量操作/">Vector</a>
+    <h1 class="article-title" itemprop="name">
+      Camera Zoom
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/10/简单的相机缩放实现/" class="archive-article-date">
+        
+        <a href="/2018/06/10/简单的相机缩放实现/" class="archive-article-date">
   	<time datetime="2018-06-10T06:48:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/10/简单的相机缩放实现/">Camera Zoom</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Unity简单的相机缩放实现"><a href="#Unity简单的相机缩放实现" class="headerlink" title="Unity简单的相机缩放实现"></a>Unity简单的相机缩放实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// </span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class CameraZoom : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    //同时按下A   +    B</span><br><span class="line">    private void Update1()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetKey(KeyCode.A) &amp;&amp; Input.GetKeyDown(KeyCode.B))</span><br><span class="line">            Debug.Log(&quot;按了&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private Camera camera;</span><br><span class="line">    private void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        //camera = GetComponent&lt;Camera&gt;();</span><br><span class="line">        camera = Camera.main;//GameObject.FindWithTag(&quot;MainCamera&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        Zoom();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private bool isFar = true;</span><br><span class="line">    private void Zoom1()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetMouseButtonDown(1))</span><br><span class="line">        &#123;</span><br><span class="line">            //修改缩放等级</span><br><span class="line">            isFar = !isFar;</span><br><span class="line">            if (isFar)</span><br><span class="line">            &#123;</span><br><span class="line">                //拉远 20  --》 60</span><br><span class="line">                camera.fieldOfView = 60;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                //拉近 60 --》 20</span><br><span class="line">                camera.fieldOfView = 20;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Zoom2()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetMouseButtonDown(1))</span><br><span class="line">        &#123;</span><br><span class="line">            //修改缩放等级</span><br><span class="line">            isFar = !isFar; </span><br><span class="line">        &#125; </span><br><span class="line">        if (isFar)</span><br><span class="line">        &#123;</span><br><span class="line">            //拉远 20  --》 60</span><br><span class="line">            if (camera.fieldOfView &lt; 60)</span><br><span class="line">                camera.fieldOfView += 2;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            //拉近 60 --》 20</span><br><span class="line">            if (camera.fieldOfView &gt; 20)</span><br><span class="line">                camera.fieldOfView -= 2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Zoom3()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetMouseButtonDown(1))</span><br><span class="line">        &#123;</span><br><span class="line">            //修改缩放等级</span><br><span class="line">            isFar = !isFar;</span><br><span class="line">        &#125;</span><br><span class="line">        if (isFar)</span><br><span class="line">        &#123;</span><br><span class="line">            //拉远 20  --》 60        Lerp(起点、终点、比例)</span><br><span class="line">            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 60, 0.1f);</span><br><span class="line">            //Vector3.Lerp</span><br><span class="line">            //Quaternion.Lerp</span><br><span class="line">            //Color.Lerp</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            //拉近 60 --》 20</span><br><span class="line">            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 20, 0.1f);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //60    50  40  30    20</span><br><span class="line">    public float[] zoomLevels;</span><br><span class="line">    private int currentLevel;</span><br><span class="line">    private void Zoom()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetMouseButtonDown(1))</span><br><span class="line">        &#123;</span><br><span class="line">            //修改缩放等级</span><br><span class="line">            //currentLevel++;</span><br><span class="line">            //currentLevel = currentLevel &lt; zoomLevels.Length - 1 ? currentLevel + 1 : 0;</span><br><span class="line">            currentLevel = (currentLevel + 1) % zoomLevels.Length;</span><br><span class="line">        &#125;</span><br><span class="line">        camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, zoomLevels[currentLevel], 0.1f); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>￥功德箱￥<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/10/简单的相机缩放实现/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/游戏暂停后当前物体不受影响/" class="archive-article-date">
-  	<time datetime="2018-06-06T03:45:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/06/10/简单的向量操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vector
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/06/游戏暂停后当前物体不受影响/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Fade In Out</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/游戏暂停后当前物体不受影响/">Fade In Out</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/三种方法倒计时/" class="archive-article-date">
-  	<time datetime="2018-06-06T03:33:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/三种方法倒计时/">Count Down Timer</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/递归寻找子物体/" class="archive-article-date">
-  	<time datetime="2018-06-06T03:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/递归寻找子物体/">Find Child</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/Fade-In-Out/" class="archive-article-date">
-  	<time datetime="2018-06-06T02:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/Fade-In-Out/">Fade In Out</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -361,8 +352,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

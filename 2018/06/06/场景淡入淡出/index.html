@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Modr1c&#39;s Blog</title>
+  <title>Fade In Out | Modr1c&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Modr1c&apos;s Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Modr1c&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Unity使用RawImage实现淡入淡出场景思路1.用UGUI设计一张全屏的纯色图片2.控制图片的Alpha值，来实现淡入淡出的效果 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960using UnityEngine;usi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fade In Out">
+<meta property="og:url" content="http://yoursite.com/2018/06/06/场景淡入淡出/index.html">
 <meta property="og:site_name" content="Modr1c&#39;s Blog">
-<meta property="og:description" content="Modr1c&apos;s Blog">
+<meta property="og:description" content="Unity使用RawImage实现淡入淡出场景思路1.用UGUI设计一张全屏的纯色图片2.控制图片的Alpha值，来实现淡入淡出的效果 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960using UnityEngine;usi">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-24T07:48:59.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Modr1c&#39;s Blog">
-<meta name="twitter:description" content="Modr1c&apos;s Blog">
+<meta name="twitter:title" content="Fade In Out">
+<meta name="twitter:description" content="Unity使用RawImage实现淡入淡出场景思路1.用UGUI设计一张全屏的纯色图片2.控制图片的Alpha值，来实现淡入淡出的效果 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960using UnityEngine;usi">
   
     <link rel="alternative" href="/atom.xml" title="Modr1c&#39;s Blog" type="application/atom+xml">
   
@@ -161,527 +162,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-场景淡入淡出" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/07/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/07/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-07T02:46:24.183Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/07/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-切点探测" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/切点探测/">Tangent Detector</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/13/切点探测/" class="archive-article-date">
-  	<time datetime="2018-06-13T01:28:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="切点探测器"><a href="#切点探测器" class="headerlink" title="切点探测器"></a>切点探测器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 切点探测器</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class TangentDetector : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    private Vector3 leftTangent;</span><br><span class="line">    private Vector3 rightTangent;</span><br><span class="line"></span><br><span class="line">    private Transform playerTF;</span><br><span class="line">    private float radius;</span><br><span class="line">    private void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        GameObject playerGO = GameObject.FindWithTag(&quot;Player&quot;);</span><br><span class="line">        if (playerGO != null)</span><br><span class="line">        &#123;</span><br><span class="line">            playerTF = playerGO.transform;</span><br><span class="line">            radius = playerGO.GetComponent&lt;CapsuleCollider&gt;().radius;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            this.enabled = false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void CalaculateTangent()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 playerToExplosion = transform.position - playerTF.position;</span><br><span class="line">        Vector3 playerToExplosionRadius = playerToExplosion.normalized * radius;</span><br><span class="line">        float angle = Mathf.Acos(radius / playerToExplosion.magnitude) * Mathf.Rad2Deg;</span><br><span class="line">        rightTangent = playerTF.position + Quaternion.Euler(0, angle, 0) * playerToExplosionRadius;</span><br><span class="line">        leftTangent = playerTF.position + Quaternion.Euler(0, -angle, 0) * playerToExplosionRadius;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //**************测试**************</span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        CalaculateTangent();</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(transform.position, leftTangent);</span><br><span class="line">        Debug.DrawLine(transform.position, rightTangent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/13/切点探测/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-欧拉角和四元数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/欧拉角和四元数/">Euler And Quaternion</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/10/欧拉角和四元数/" class="archive-article-date">
-  	<time datetime="2018-06-10T09:33:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="欧拉角的使用"><a href="#欧拉角的使用" class="headerlink" title="欧拉角的使用"></a>欧拉角的使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// </span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class EulerDemo : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    public Vector3 euler;</span><br><span class="line">    private void OnGUI()</span><br><span class="line">    &#123;</span><br><span class="line">        euler = transform.eulerAngles;</span><br><span class="line"></span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿X轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            //Vector3 euler = transform.eulerAngles;</span><br><span class="line">            //欧拉角 没有 方向 和 大小的概念。</span><br><span class="line">            //x  y   z  沿某个轴的旋转角度 </span><br><span class="line">            transform.eulerAngles += Vector3.right;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿Y轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            transform.eulerAngles += Vector3.up;</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿Z轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            transform.eulerAngles += Vector3.forward;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="四元数的使用"><a href="#四元数的使用" class="headerlink" title="四元数的使用"></a>四元数的使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// </span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class QuaternionDemo : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    private void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        //物体沿Y轴旋转50度</span><br><span class="line">        Vector3 axis = Vector3.up;</span><br><span class="line">        float rad = 50 * Mathf.Deg2Rad;</span><br><span class="line">        Quaternion qt = new Quaternion</span><br><span class="line">        &#123;</span><br><span class="line">            x = Mathf.Sin(rad / 2) * axis.x,</span><br><span class="line">            y = Mathf.Sin(rad / 2) * axis.y,</span><br><span class="line">            z = Mathf.Sin(rad / 2) * axis.z,</span><br><span class="line">            w = Mathf.Cos(rad / 2)</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        //transform.rotation = qt;</span><br><span class="line">        transform.rotation = Quaternion.Euler(0, 50, 0);</span><br><span class="line"></span><br><span class="line">        Debug.Log(transform.eulerAngles);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //计算</span><br><span class="line">    private void OnGUI()</span><br><span class="line">    &#123; </span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿X轴旋转&quot;))</span><br><span class="line">        &#123;  </span><br><span class="line">            transform.rotation *= Quaternion.Euler(1, 0, 0);</span><br><span class="line">            //transform.Rotate(1, 0, 0); //Rotate通过四元数实现</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿Y轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            transform.rotation *= Quaternion.Euler(0, 1, 0);</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿Z轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            transform.rotation *= Quaternion.Euler(0, 0, 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        Demo01();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Demo01()</span><br><span class="line">    &#123;  </span><br><span class="line">        //计算物体右前方30度10m处坐标</span><br><span class="line">        Vector3 worldPos =</span><br><span class="line">            transform.position + Quaternion.Euler(0, 30, 0) * transform.rotation * new Vector3(0, 0, 10);</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(transform.position, worldPos);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/10/欧拉角和四元数/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-简单的向量操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/简单的向量操作/">Vector</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/10/简单的向量操作/" class="archive-article-date">
-  	<time datetime="2018-06-10T07:23:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Unity简单的向量操作"><a href="#Unity简单的向量操作" class="headerlink" title="Unity简单的向量操作"></a>Unity简单的向量操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 向量</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class VectorDemo : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    public Transform t1, t2, t3;</span><br><span class="line"></span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        Demo08();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //计算向量长度</span><br><span class="line">    private void Demo01()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 pos = transform.position;</span><br><span class="line">        float m1 = Mathf.Sqrt(Mathf.Pow(pos.x, 2) + Mathf.Pow(pos.y, 2) + Mathf.Pow(pos.z, 2));</span><br><span class="line">        float m2 = pos.magnitude;</span><br><span class="line">        print(m1 + &quot;----&quot; + m2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //计算向量方向</span><br><span class="line">    private void Demo02()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 pos = transform.position;</span><br><span class="line"></span><br><span class="line">        Vector3 n1 = pos / pos.magnitude;</span><br><span class="line">        Vector3 n2 = pos.normalized;</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(Vector3.zero, n1, Color.red);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //向量基本运算</span><br><span class="line">    private void Demo03()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 result = t1.position - t2.position;</span><br><span class="line">        //需求：t3 沿着 result 方向移动</span><br><span class="line">        if (Input.GetMouseButtonDown(0))</span><br><span class="line">            //t3.Translate(result.normalized);</span><br><span class="line">            t3.position = t3.position + result.normalized;</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(Vector3.zero, t1.position);</span><br><span class="line">        Debug.DrawLine(Vector3.zero, t2.position);</span><br><span class="line">        Debug.DrawLine(Vector3.zero, result, Color.red);</span><br><span class="line"></span><br><span class="line">        //已知向量a  长度为8.3m</span><br><span class="line">        //计算该方向 长度为1.5m的向量</span><br><span class="line">        //解决方案：将ａ向量标准化，　再乘以1.5</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //弧度与角度</span><br><span class="line">    private void Demo04()</span><br><span class="line">    &#123;</span><br><span class="line">        // f1角度=&gt;f2 弧度： 弧度=角度数*PI/180   </span><br><span class="line">        float f1 = 50;</span><br><span class="line">        float f2 = f1 * Mathf.PI / 180;</span><br><span class="line">        float f3 = f1 * Mathf.Deg2Rad;</span><br><span class="line">        // Mathf.Rad2Deg  弧度  ---&gt;  角度 </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //三角函数</span><br><span class="line">    private void Demo05()</span><br><span class="line">    &#123;</span><br><span class="line">        /*</span><br><span class="line">             sin x = a  /  c</span><br><span class="line">             a = c *  sin x;</span><br><span class="line">             c =  a / sin x; </span><br><span class="line">         */</span><br><span class="line">        //已知：角度x  边长 a</span><br><span class="line">        //计算：边长 c</span><br><span class="line">        float x = 50;</span><br><span class="line">        float a = 10;</span><br><span class="line">        float c = a / Mathf.Sin(x * Mathf.Deg2Rad);</span><br><span class="line"></span><br><span class="line">        //已知：边长 a  c</span><br><span class="line">        //计算：角度angle</span><br><span class="line">        float angle = Mathf.Asin(a / c) * Mathf.Rad2Deg;</span><br><span class="line"></span><br><span class="line">        print(angle);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //自身坐标  --&gt;  世界坐标</span><br><span class="line">    private void Demo06()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 worldPos = transform.TransformPoint(1, 0, 0);</span><br><span class="line">        Debug.DrawLine(this.transform.position, worldPos);</span><br><span class="line"></span><br><span class="line">        //transform.forward   </span><br><span class="line">        //transform.up</span><br><span class="line">        //transform.right</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //练习</span><br><span class="line">    private void Demo07()</span><br><span class="line">    &#123;</span><br><span class="line">        //计算：前右方30度  10米处世界坐标 </span><br><span class="line">        Vector3 localPos = new Vector3(10 * Mathf.Sin(30 * Mathf.Deg2Rad), 0, 10 * Mathf.Cos(30 * Mathf.Deg2Rad));</span><br><span class="line">        Vector3 worldPos = transform.TransformPoint(localPos);</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(transform.position, worldPos);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public float angle;</span><br><span class="line">    //向量     向量</span><br><span class="line">    private void Demo08()</span><br><span class="line">    &#123;</span><br><span class="line">        //向量   + - 向量</span><br><span class="line">        //向量   *  / 数</span><br><span class="line">        //向量   (点乘)  (叉乘)    向量</span><br><span class="line">        //</span><br><span class="line"></span><br><span class="line">        //参与点乘运算的向量标准化后，结果为夹角的 cos 值</span><br><span class="line">        float dot = Vector3.Dot(t1.position.normalized, t2.position.normalized);</span><br><span class="line">        angle = Mathf.Acos(dot) * Mathf.Rad2Deg;</span><br><span class="line"></span><br><span class="line">        //if (angle &gt; 30)//比较角度</span><br><span class="line">        if (dot &lt; 0.866f)//比较cos值</span><br><span class="line">        &#123;</span><br><span class="line">            //如果夹角大于30度则</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Vector3 cross = Vector3.Cross(t1.position, t2.position);</span><br><span class="line">        if (cross.y &lt; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            angle = 360 - angle;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(Vector3.zero, cross, Color.red);</span><br><span class="line">        Debug.DrawLine(Vector3.zero, t1.position);</span><br><span class="line">        Debug.DrawLine(Vector3.zero, t2.position);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/10/简单的向量操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-简单的相机缩放实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/简单的相机缩放实现/">Camera Zoom</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/10/简单的相机缩放实现/" class="archive-article-date">
-  	<time datetime="2018-06-10T06:48:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Unity简单的相机缩放实现"><a href="#Unity简单的相机缩放实现" class="headerlink" title="Unity简单的相机缩放实现"></a>Unity简单的相机缩放实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// </span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class CameraZoom : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    //同时按下A   +    B</span><br><span class="line">    private void Update1()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetKey(KeyCode.A) &amp;&amp; Input.GetKeyDown(KeyCode.B))</span><br><span class="line">            Debug.Log(&quot;按了&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private Camera camera;</span><br><span class="line">    private void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        //camera = GetComponent&lt;Camera&gt;();</span><br><span class="line">        camera = Camera.main;//GameObject.FindWithTag(&quot;MainCamera&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        Zoom();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private bool isFar = true;</span><br><span class="line">    private void Zoom1()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetMouseButtonDown(1))</span><br><span class="line">        &#123;</span><br><span class="line">            //修改缩放等级</span><br><span class="line">            isFar = !isFar;</span><br><span class="line">            if (isFar)</span><br><span class="line">            &#123;</span><br><span class="line">                //拉远 20  --》 60</span><br><span class="line">                camera.fieldOfView = 60;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                //拉近 60 --》 20</span><br><span class="line">                camera.fieldOfView = 20;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Zoom2()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetMouseButtonDown(1))</span><br><span class="line">        &#123;</span><br><span class="line">            //修改缩放等级</span><br><span class="line">            isFar = !isFar; </span><br><span class="line">        &#125; </span><br><span class="line">        if (isFar)</span><br><span class="line">        &#123;</span><br><span class="line">            //拉远 20  --》 60</span><br><span class="line">            if (camera.fieldOfView &lt; 60)</span><br><span class="line">                camera.fieldOfView += 2;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            //拉近 60 --》 20</span><br><span class="line">            if (camera.fieldOfView &gt; 20)</span><br><span class="line">                camera.fieldOfView -= 2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Zoom3()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetMouseButtonDown(1))</span><br><span class="line">        &#123;</span><br><span class="line">            //修改缩放等级</span><br><span class="line">            isFar = !isFar;</span><br><span class="line">        &#125;</span><br><span class="line">        if (isFar)</span><br><span class="line">        &#123;</span><br><span class="line">            //拉远 20  --》 60        Lerp(起点、终点、比例)</span><br><span class="line">            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 60, 0.1f);</span><br><span class="line">            //Vector3.Lerp</span><br><span class="line">            //Quaternion.Lerp</span><br><span class="line">            //Color.Lerp</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            //拉近 60 --》 20</span><br><span class="line">            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 20, 0.1f);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //60    50  40  30    20</span><br><span class="line">    public float[] zoomLevels;</span><br><span class="line">    private int currentLevel;</span><br><span class="line">    private void Zoom()</span><br><span class="line">    &#123;</span><br><span class="line">        if (Input.GetMouseButtonDown(1))</span><br><span class="line">        &#123;</span><br><span class="line">            //修改缩放等级</span><br><span class="line">            //currentLevel++;</span><br><span class="line">            //currentLevel = currentLevel &lt; zoomLevels.Length - 1 ? currentLevel + 1 : 0;</span><br><span class="line">            currentLevel = (currentLevel + 1) % zoomLevels.Length;</span><br><span class="line">        &#125;</span><br><span class="line">        camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, zoomLevels[currentLevel], 0.1f); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/10/简单的相机缩放实现/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-游戏暂停后当前物体不受影响" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/06/游戏暂停后当前物体不受影响/">Fade In Out</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/06/游戏暂停后当前物体不受影响/" class="archive-article-date">
-  	<time datetime="2018-06-06T03:45:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Unity当游戏暂停后当前物体不受影响"><a href="#Unity当游戏暂停后当前物体不受影响" class="headerlink" title="Unity当游戏暂停后当前物体不受影响"></a>Unity当游戏暂停后当前物体不受影响</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// </span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class TimeDemo : MonoBehaviour</span><br><span class="line">&#123; </span><br><span class="line">    public float speed = 10;</span><br><span class="line">    private void OnGUI()</span><br><span class="line">    &#123;</span><br><span class="line">        if (GUILayout.Button(&quot;游戏暂停&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            Time.timeScale = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.Button(&quot;游戏继续&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            Time.timeScale = 1;</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.Button(&quot;慢动作&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            Time.timeScale = 0.1f;</span><br><span class="line">        &#125;</span><br><span class="line">        /*</span><br><span class="line">         Time.timeScale </span><br><span class="line">         不影响渲染  所以 Update 执行间隔不受影响</span><br><span class="line">         影响物理更新 所以FidexUpdate执行间隔受间隔</span><br><span class="line">         Time.deltaTime  受影响</span><br><span class="line">         */</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public float deltaTime, unscaledDeltaTime, time, unscaledTime;</span><br><span class="line">    private void Update()</span><br><span class="line">    &#123; </span><br><span class="line">        //本帧时间  -   上一帧时间</span><br><span class="line">        //上一帧消耗时间</span><br><span class="line">        deltaTime = Time.deltaTime;</span><br><span class="line"></span><br><span class="line">        unscaledDeltaTime = Time.unscaledDeltaTime;</span><br><span class="line"></span><br><span class="line">        time = Time.time;</span><br><span class="line"></span><br><span class="line">        unscaledTime = Time.unscaledTime;</span><br><span class="line"></span><br><span class="line">        //机器性能差/渲染量大    每帧执行间隔大   每秒渲染次数少(Update执行次数少)  希望 每次多旋转</span><br><span class="line">        //机器性能好/渲染量小    每帧执行间隔小   每秒渲染次数多(Update执行次数多)  希望 每次少旋转</span><br><span class="line">          </span><br><span class="line">        //每帧沿Y轴旋转1度</span><br><span class="line">        //transform.Rotate(0, 1, 0);</span><br><span class="line"></span><br><span class="line">        //如果Update执行次数少  那么deltaTime数值大</span><br><span class="line">        //                              多                               小</span><br><span class="line">        //总结：如果在Update中对物体做物理操作(移动/旋转/力)</span><br><span class="line">        //         需要在速度上 乘以 每帧消耗时间，用以得到恒定的速度。</span><br><span class="line">        //transform.Rotate(0, speed * Time.deltaTime, 0);</span><br><span class="line"></span><br><span class="line">        //如果希望游戏暂停后，当前物体不受影响</span><br><span class="line">        transform.Rotate(0, speed * Time.unscaledDeltaTime, 0);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void FixedUpdate()</span><br><span class="line">    &#123;  </span><br><span class="line">        transform.Rotate(0, speed * Time.deltaTime, 0);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/06/游戏暂停后当前物体不受影响/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-三种方法倒计时" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/06/三种方法倒计时/">Count Down Timer</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/06/三种方法倒计时/" class="archive-article-date">
-  	<time datetime="2018-06-06T03:33:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Unity倒计时方法"><a href="#Unity倒计时方法" class="headerlink" title="Unity倒计时方法"></a>Unity倒计时方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">using UnityEngine.UI;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 倒计时器</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class CountdownTimer : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    public int second = 120;</span><br><span class="line"></span><br><span class="line">    private Text txtTimer;</span><br><span class="line">    private void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        txtTimer = GetComponent&lt;Text&gt;();</span><br><span class="line">         </span><br><span class="line">        //重复调用（要执行的方法名称,开始调用时间,调用间隔）</span><br><span class="line">        InvokeRepeating(&quot;Timer&quot;, 1, 1); </span><br><span class="line">        //延迟调用</span><br><span class="line">        //Invoke(&quot;需要调用的方法名称&quot;, 调用时间);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private float nextTime = 1;//下一次改变时间</span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        //如果(按住鼠标左键 &amp;&amp;  nextTime &lt;= Time.time)</span><br><span class="line">        // 则发射子弹   nextTime = Time.time + 0.1f;</span><br><span class="line">         </span><br><span class="line">        //如果(按住鼠标左键)</span><br><span class="line">        //totalTime += Time.deltaTime;</span><br><span class="line">        // if(totalTime &gt;=0.1f)</span><br><span class="line">        // 则发射子弹  totalTime = 0;</span><br><span class="line"></span><br><span class="line">        //沿多个路点移动，到达目标等待一段时间。</span><br><span class="line">        //如果到达目标点</span><br><span class="line">        //totalTime += Time.deltaTime;</span><br><span class="line">        // if(totalTime &gt;=3)</span><br><span class="line">        // 设置目标点   totalTime = 0</span><br><span class="line">          </span><br><span class="line">        //Timer();</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    //Time.time 实现</span><br><span class="line">    //试用场合：发射子弹</span><br><span class="line">    private void Timer1()</span><br><span class="line">    &#123;</span><br><span class="line">        //如果时间到了 </span><br><span class="line">        if (nextTime &lt;= Time.time)</span><br><span class="line">        &#123;</span><br><span class="line">            second--;//119       1:59 </span><br><span class="line">            txtTimer.text = string.Format(&quot;&#123;0:d2&#125;:&#123;1:d2&#125;&quot;, second / 60, second % 60);</span><br><span class="line">            nextTime = Time.time + 1;//在当前时间上增加1s</span><br><span class="line"></span><br><span class="line">            if (second &lt;= 10) txtTimer.color = Color.red;</span><br><span class="line">            if (second &lt;= 0) enabled = false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Time.deltaTime 实现</span><br><span class="line">    //试用场合：沿多个路点移动，每次到达路点等待一段时间。</span><br><span class="line">    private float totalTime = 0;</span><br><span class="line">    private void Timer2()</span><br><span class="line">    &#123;</span><br><span class="line">        //累加每帧消耗时间</span><br><span class="line">        totalTime += Time.deltaTime;</span><br><span class="line"></span><br><span class="line">        //如果1s</span><br><span class="line">        if (totalTime&gt;=1)</span><br><span class="line">        &#123;</span><br><span class="line">            second--;//119       1:59 </span><br><span class="line">            txtTimer.text = string.Format(&quot;&#123;0:d2&#125;:&#123;1:d2&#125;&quot;, second / 60, second % 60);</span><br><span class="line">            totalTime = 0;//清空累加的时间</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //InvokeRepeating 实现</span><br><span class="line">    //试用场合：计时器。每间隔固定时间 执行1次</span><br><span class="line">    private void Timer()</span><br><span class="line">    &#123;</span><br><span class="line">        second--;//119       1:59 </span><br><span class="line">        txtTimer.text = string.Format(&quot;&#123;0:d2&#125;:&#123;1:d2&#125;&quot;, second / 60, second % 60);</span><br><span class="line"></span><br><span class="line">        if (second &lt;= 0)</span><br><span class="line">            CancelInvoke(&quot;Timer&quot;);//取消调用</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/06/三种方法倒计时/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-递归寻找子物体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/06/递归寻找子物体/">Find Child</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/06/递归寻找子物体/" class="archive-article-date">
-  	<time datetime="2018-06-06T03:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Unity递归寻找子物体"><a href="#Unity递归寻找子物体" class="headerlink" title="Unity递归寻找子物体"></a>Unity递归寻找子物体</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static Transform FindChild(Transform trans, string goName)</span><br><span class="line">&#123;</span><br><span class="line">    Transform child = trans.Find(goName);</span><br><span class="line">    if (child != null)</span><br><span class="line">        return child;</span><br><span class="line"></span><br><span class="line">    Transform go = null;</span><br><span class="line">    for (int i = 0; i &lt; trans.childCount; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        child = trans.GetChild(i);</span><br><span class="line">        go = FindChild(child, goName);</span><br><span class="line">        if (go != null)</span><br><span class="line">            return go;</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/06/递归寻找子物体/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-场景淡入淡出" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/06/场景淡入淡出/">Fade In Out</a>
+    <h1 class="article-title" itemprop="name">
+      Fade In Out
     </h1>
   
 
@@ -699,6 +187,37 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>￥功德箱￥<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -706,16 +225,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/06/场景淡入淡出/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/06/场景淡入淡出/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/06/06/递归寻找子物体/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Find Child
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/01/Unity画线/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Draw Line</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -735,84 +322,14 @@
 
 
 
-
   
-    <article id="post-Unity画线" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/01/Unity画线/">Draw Line</a>
-    </h1>
   
 
-        
-        <a href="/2018/06/01/Unity画线/" class="archive-article-date">
-  	<time datetime="2018-06-01T10:58:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Unity-几种画线方式"><a href="#Unity-几种画线方式" class="headerlink" title="Unity 几种画线方式"></a>Unity 几种画线方式</h2><h3 id="一、图形化调试"><a href="#一、图形化调试" class="headerlink" title="一、图形化调试"></a>一、图形化调试</h3><p>Unity中图形化调试主要4种</p>
-<p>1.Debug.Draw</p>
-<p>2.Gizmos.Draw</p>
-<p>3.Graphic.DrawMesh</p>
-<p>4.GL</p>
-<p>只需在Scene窗口显示的调试图像</p>
-<p>一直显示的 OnDrawGizmos + Gizmos.Draw</p>
-<p>选中显示的 OnDrawGizmosSelected + Gizmos.Draw</p>
-<p>脚本控制的 Update + Debug.Draw</p>
-<p>需要在实际设备屏幕显示的调试图像</p>
-<p>Update+Graphic.DrawMesh</p>
-<p>OnRenderObject+GL</p>
-<p>Graphic.DrawMesh和Debug.Draw   调用一致，都是在Update系里</p>
-<p>Graphic.DrawMesh和GL       显示类似，都在各个窗口显示，并且可以设置材质。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/01/Unity画线/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -835,8 +352,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

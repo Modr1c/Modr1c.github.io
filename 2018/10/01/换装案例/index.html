@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Modr1c&#39;s Blog</title>
+  <title>Change Cloth | Modr1c&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Modr1c&apos;s Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Modr1c&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Unity换装案例FindChild.cs12345678910111213141516171819202122/// &amp;lt;summary&amp;gt;/// 查找子物体/// &amp;lt;/summary&amp;gt;public class GlobalTool &amp;#123;    public static GameObject FindChild(Transform trans, string goN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Change Cloth">
+<meta property="og:url" content="http://yoursite.com/2018/10/01/换装案例/index.html">
 <meta property="og:site_name" content="Modr1c&#39;s Blog">
-<meta property="og:description" content="Modr1c&apos;s Blog">
+<meta property="og:description" content="Unity换装案例FindChild.cs12345678910111213141516171819202122/// &amp;lt;summary&amp;gt;/// 查找子物体/// &amp;lt;/summary&amp;gt;public class GlobalTool &amp;#123;    public static GameObject FindChild(Transform trans, string goN">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-27T10:16:13.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Modr1c&#39;s Blog">
-<meta name="twitter:description" content="Modr1c&apos;s Blog">
+<meta name="twitter:title" content="Change Cloth">
+<meta name="twitter:description" content="Unity换装案例FindChild.cs12345678910111213141516171819202122/// &amp;lt;summary&amp;gt;/// 查找子物体/// &amp;lt;/summary&amp;gt;public class GlobalTool &amp;#123;    public static GameObject FindChild(Transform trans, string goN">
   
     <link rel="alternative" href="/atom.xml" title="Modr1c&#39;s Blog" type="application/atom+xml">
   
@@ -161,305 +162,248 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-换装案例" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/07/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-07T02:46:24.183Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/07/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      Change Cloth
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/01/换装案例/" class="archive-article-date">
+        
+        <a href="/2018/10/01/换装案例/" class="archive-article-date">
   	<time datetime="2018-10-01T03:05:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/01/换装案例/">Change Cloth</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Unity换装案例"><a href="#Unity换装案例" class="headerlink" title="Unity换装案例"></a>Unity换装案例</h2><h3 id="FindChild-cs"><a href="#FindChild-cs" class="headerlink" title="FindChild.cs"></a>FindChild.cs</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 查找子物体</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class GlobalTool </span><br><span class="line">&#123;</span><br><span class="line">    public static GameObject FindChild(Transform trans, string goName)</span><br><span class="line">    &#123;</span><br><span class="line">        Transform child = trans.FindChild(goName);</span><br><span class="line">        if (child != null)</span><br><span class="line">            return child.gameObject;</span><br><span class="line"></span><br><span class="line">        GameObject go;</span><br><span class="line">        for (int i = 0; i &lt; trans.childCount; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            child = trans.GetChild(i);</span><br><span class="line">            go = FindChild(child, goName);</span><br><span class="line">            if (go != null)</span><br><span class="line">                return go;</span><br><span class="line">        &#125;</span><br><span class="line">            return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="ButtonClickHandler-cs"><a href="#ButtonClickHandler-cs" class="headerlink" title="ButtonClickHandler.cs"></a>ButtonClickHandler.cs</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 按钮分配任务</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class ButtonClickHandler : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    private SkinController skinController;</span><br><span class="line">    //为所有按钮分配响应方法</span><br><span class="line">    private void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        skinController = FindObjectOfType&lt;SkinController&gt;();</span><br><span class="line">        for (int i = 0; i &lt; transform.childCount; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            transform.GetChild(i).GetComponent&lt;UIButton&gt;().onClick.Add</span><br><span class="line">                (new EventDelegate(OnButtonClick));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    private void OnButtonClick()</span><br><span class="line">    &#123;</span><br><span class="line">        //获取到当前点击到的按钮名</span><br><span class="line">        print(&quot;当前点击按钮名字 ： &quot; + UIButton.current.name);</span><br><span class="line">        var arr = UIButton.current.name.Split(&apos; &apos;);</span><br><span class="line">        var function = arr[0];//功能描述</span><br><span class="line">        var goName = arr[1];//资源描述</span><br><span class="line">        switch (function)</span><br><span class="line">        &#123;</span><br><span class="line">            case &quot;Weapons&quot;:</span><br><span class="line">                skinController.ChangeWeapon(goName);</span><br><span class="line">                break;</span><br><span class="line">            case &quot;Animation&quot;:</span><br><span class="line">                skinController.ChangeAnimation(goName);</span><br><span class="line">                break;</span><br><span class="line">            case &quot;Character&quot;:</span><br><span class="line">                skinController.ChangeCharacter(goName);</span><br><span class="line">                break;</span><br><span class="line">            case &quot;Clother&quot;:</span><br><span class="line">                skinController.ChangeClother(goName);</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="Factory-cs"><a href="#Factory-cs" class="headerlink" title="Factory.cs"></a>Factory.cs</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 工厂类（加载资源）</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class Factory</span><br><span class="line">&#123;</span><br><span class="line">    //加载资源</span><br><span class="line">    //负责进场景(诞生)</span><br><span class="line">    private string wpPath = &quot;Weapons/wp_&quot;;</span><br><span class="line">    private string characterPath = &quot;Prefabs/mon_&quot;;</span><br><span class="line">    private string clothPath = &quot;Clother/&quot;;</span><br><span class="line">    private Dictionary&lt;string, Object&gt; dic = new Dictionary&lt;string, Object&gt;();</span><br><span class="line"></span><br><span class="line">    //加载武器</span><br><span class="line">    public GameObject LoadWeapon(string goName)</span><br><span class="line">    &#123;</span><br><span class="line">        return LoadObj(wpPath + goName);</span><br><span class="line">    &#125;</span><br><span class="line">    //加载角色</span><br><span class="line">    public GameObject LoadCharacter(string goName)</span><br><span class="line">    &#123;</span><br><span class="line">        return LoadObj(characterPath + goName);</span><br><span class="line">    &#125;</span><br><span class="line">    //加载服装图片</span><br><span class="line">    public Texture LoadTexture(string goName)</span><br><span class="line">    &#123;</span><br><span class="line">        return LoadTextureObj(clothPath + goName);</span><br><span class="line">    &#125;</span><br><span class="line">    private GameObject LoadObj(string resourcesName)</span><br><span class="line">    &#123;</span><br><span class="line">        if(!dic.ContainsKey(resourcesName))</span><br><span class="line">        &#123;</span><br><span class="line">            GameObject obj = (GameObject)Resources.Load(resourcesName);</span><br><span class="line">            obj = GameObject.Instantiate(obj);</span><br><span class="line">            obj.name = obj.name.Replace(&quot;(Clone)&quot;, &quot;&quot;);</span><br><span class="line">            dic.Add(goName, obj);</span><br><span class="line">        &#125;</span><br><span class="line">        return (GameObject)dic[resourcesName];</span><br><span class="line">    &#125;</span><br><span class="line">    private Texture LoadTextureObj(string resourcesName)</span><br><span class="line">    &#123;</span><br><span class="line">        if (!dic.ContainsKey(resourcesName))</span><br><span class="line">        &#123;</span><br><span class="line">            Texture go = (Texture)Resources.Load(resourcesName);</span><br><span class="line">            dic.Add(resourcesName, go);</span><br><span class="line">        &#125;</span><br><span class="line">        return (Texture)dic[resourcesName];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="SkinController-cs"><a href="#SkinController-cs" class="headerlink" title="SkinController.cs"></a>SkinController.cs</h3><pre><code>/// &lt;summary&gt;
+/// 业务处理类（使用资源）
+/// &lt;/summary&gt;
+public class SkinController : MonoBehaviour
+{
+    private Factory factory = new Factory();
+    private GameObject currentCharacter;
+    private GameObject currentWeapon;
+    /// &lt;summary&gt;
+    /// 更换武器
+    /// &lt;/summary&gt;
+    public void ChangeWeapon(string goName)
+    {
+      if(currentCharacter!=null)
+      {
+          //加载武器
+          GameObject weapon = factory.LoadWeapon(goName);
+          if (currentWeapon != null &amp;&amp; currentWeapon.name != weapon.name)
+              currentWeapon.SetActive(false);//原来的武器
+          //挂载点
+          GameObject wpHand = GlobalTool.FindChild(currentCharacter.transform, &quot;wphand&quot;);
+          //武器显隐、位置、角度
+          currentWeapon = weapon;
+          currentWeapon.transform.parent = wpHand.transform;
+          currentWeapon.transform.localPosition = Vector3.zero;
+          currentWeapon.transform.localEulerAngles = new Vector3(0,0,180);
+          currentWeapon.SetActive(true);//现在的武器
+      }
+
+    }
+    /// &lt;summary&gt;
+    /// 更换动画
+    /// &lt;/summary&gt;
+    public void ChangeAnimation(string goName)
+    {
+        if (currentCharacter != null)
+            //播放动画
+            currentCharacter.GetComponent&lt;Animation&gt;().Play(goName);
+    }
+    /// &lt;summary&gt;
+    /// 更换角色
+    /// &lt;/summary&gt;
+    public void ChangeCharacter(string goName)
+    {
+        //加载角色
+        GameObject character = factory.LoadCharacter(goName);
+        if (currentCharacter != null &amp;&amp; currentCharacter.name != character.name)
+            currentCharacter.SetActive(false);//原来的角色
+        //控制角色诞生点，角度,显隐
+        character.transform.position = transform.position;
+        character.transform.rotation = transform.rotation;
+        currentCharacter = character;
+        currentCharacter.SetActive(true);//现在的角色
+    }
+    /// &lt;summary&gt;
+    /// 换服装
+    /// &lt;/summary&gt;
+    public void ChangeClother(string goName)
+    {
+        if(currentCharacter != null)
+        {
+            //加载服装图片
+            Texture cloth = factory.LoadTexture(currentCharacter.name + &quot;_&quot; + goName);
+            //换装
+            currentCharacter.GetComponentInChildren&lt;SkinnedMeshRenderer&gt;().material.
+                mainTexture = cloth;
+        }
+
+    }
+}</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>￥功德箱￥<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/01/换装案例/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/13/切点探测/" class="archive-article-date">
-  	<time datetime="2018-06-13T01:28:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/05/07/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/13/切点探测/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Tangent Detector</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/13/切点探测/">Tangent Detector</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/10/欧拉角和四元数/" class="archive-article-date">
-  	<time datetime="2018-06-10T09:33:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/10/欧拉角和四元数/">Euler And Quaternion</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/10/简单的向量操作/" class="archive-article-date">
-  	<time datetime="2018-06-10T07:23:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/10/简单的向量操作/">Vector</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/10/简单的相机缩放实现/" class="archive-article-date">
-  	<time datetime="2018-06-10T06:48:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/10/简单的相机缩放实现/">Camera Zoom</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/游戏暂停后当前物体不受影响/" class="archive-article-date">
-  	<time datetime="2018-06-06T03:45:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/游戏暂停后当前物体不受影响/">Fade In Out</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/三种方法倒计时/" class="archive-article-date">
-  	<time datetime="2018-06-06T03:33:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/三种方法倒计时/">Count Down Timer</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/递归寻找子物体/" class="archive-article-date">
-  	<time datetime="2018-06-06T03:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/递归寻找子物体/">Find Child</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/06/场景淡入淡出/" class="archive-article-date">
-  	<time datetime="2018-06-06T02:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/06/场景淡入淡出/">Fade In Out</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -483,8 +427,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

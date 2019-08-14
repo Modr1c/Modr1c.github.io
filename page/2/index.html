@@ -151,6 +151,193 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-游戏暂停后当前物体不受影响" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/06/游戏暂停后当前物体不受影响/">Fade In Out</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/06/游戏暂停后当前物体不受影响/" class="archive-article-date">
+  	<time datetime="2018-06-06T03:45:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Unity当游戏暂停后当前物体不受影响"><a href="#Unity当游戏暂停后当前物体不受影响" class="headerlink" title="Unity当游戏暂停后当前物体不受影响"></a>Unity当游戏暂停后当前物体不受影响</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// </span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class TimeDemo : MonoBehaviour</span><br><span class="line">&#123; </span><br><span class="line">    public float speed = 10;</span><br><span class="line">    private void OnGUI()</span><br><span class="line">    &#123;</span><br><span class="line">        if (GUILayout.Button(&quot;游戏暂停&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            Time.timeScale = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.Button(&quot;游戏继续&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            Time.timeScale = 1;</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.Button(&quot;慢动作&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            Time.timeScale = 0.1f;</span><br><span class="line">        &#125;</span><br><span class="line">        /*</span><br><span class="line">         Time.timeScale </span><br><span class="line">         不影响渲染  所以 Update 执行间隔不受影响</span><br><span class="line">         影响物理更新 所以FidexUpdate执行间隔受间隔</span><br><span class="line">         Time.deltaTime  受影响</span><br><span class="line">         */</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public float deltaTime, unscaledDeltaTime, time, unscaledTime;</span><br><span class="line">    private void Update()</span><br><span class="line">    &#123; </span><br><span class="line">        //本帧时间  -   上一帧时间</span><br><span class="line">        //上一帧消耗时间</span><br><span class="line">        deltaTime = Time.deltaTime;</span><br><span class="line"></span><br><span class="line">        unscaledDeltaTime = Time.unscaledDeltaTime;</span><br><span class="line"></span><br><span class="line">        time = Time.time;</span><br><span class="line"></span><br><span class="line">        unscaledTime = Time.unscaledTime;</span><br><span class="line"></span><br><span class="line">        //机器性能差/渲染量大    每帧执行间隔大   每秒渲染次数少(Update执行次数少)  希望 每次多旋转</span><br><span class="line">        //机器性能好/渲染量小    每帧执行间隔小   每秒渲染次数多(Update执行次数多)  希望 每次少旋转</span><br><span class="line">          </span><br><span class="line">        //每帧沿Y轴旋转1度</span><br><span class="line">        //transform.Rotate(0, 1, 0);</span><br><span class="line"></span><br><span class="line">        //如果Update执行次数少  那么deltaTime数值大</span><br><span class="line">        //                              多                               小</span><br><span class="line">        //总结：如果在Update中对物体做物理操作(移动/旋转/力)</span><br><span class="line">        //         需要在速度上 乘以 每帧消耗时间，用以得到恒定的速度。</span><br><span class="line">        //transform.Rotate(0, speed * Time.deltaTime, 0);</span><br><span class="line"></span><br><span class="line">        //如果希望游戏暂停后，当前物体不受影响</span><br><span class="line">        transform.Rotate(0, speed * Time.unscaledDeltaTime, 0);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void FixedUpdate()</span><br><span class="line">    &#123;  </span><br><span class="line">        transform.Rotate(0, speed * Time.deltaTime, 0);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/06/游戏暂停后当前物体不受影响/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-三种方法倒计时" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/06/三种方法倒计时/">Count Down Timer</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/06/三种方法倒计时/" class="archive-article-date">
+  	<time datetime="2018-06-06T03:33:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Unity倒计时方法"><a href="#Unity倒计时方法" class="headerlink" title="Unity倒计时方法"></a>Unity倒计时方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line">using UnityEngine.UI;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 倒计时器</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class CountdownTimer : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    public int second = 120;</span><br><span class="line"></span><br><span class="line">    private Text txtTimer;</span><br><span class="line">    private void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        txtTimer = GetComponent&lt;Text&gt;();</span><br><span class="line">         </span><br><span class="line">        //重复调用（要执行的方法名称,开始调用时间,调用间隔）</span><br><span class="line">        InvokeRepeating(&quot;Timer&quot;, 1, 1); </span><br><span class="line">        //延迟调用</span><br><span class="line">        //Invoke(&quot;需要调用的方法名称&quot;, 调用时间);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private float nextTime = 1;//下一次改变时间</span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        //如果(按住鼠标左键 &amp;&amp;  nextTime &lt;= Time.time)</span><br><span class="line">        // 则发射子弹   nextTime = Time.time + 0.1f;</span><br><span class="line">         </span><br><span class="line">        //如果(按住鼠标左键)</span><br><span class="line">        //totalTime += Time.deltaTime;</span><br><span class="line">        // if(totalTime &gt;=0.1f)</span><br><span class="line">        // 则发射子弹  totalTime = 0;</span><br><span class="line"></span><br><span class="line">        //沿多个路点移动，到达目标等待一段时间。</span><br><span class="line">        //如果到达目标点</span><br><span class="line">        //totalTime += Time.deltaTime;</span><br><span class="line">        // if(totalTime &gt;=3)</span><br><span class="line">        // 设置目标点   totalTime = 0</span><br><span class="line">          </span><br><span class="line">        //Timer();</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    //Time.time 实现</span><br><span class="line">    //试用场合：发射子弹</span><br><span class="line">    private void Timer1()</span><br><span class="line">    &#123;</span><br><span class="line">        //如果时间到了 </span><br><span class="line">        if (nextTime &lt;= Time.time)</span><br><span class="line">        &#123;</span><br><span class="line">            second--;//119       1:59 </span><br><span class="line">            txtTimer.text = string.Format(&quot;&#123;0:d2&#125;:&#123;1:d2&#125;&quot;, second / 60, second % 60);</span><br><span class="line">            nextTime = Time.time + 1;//在当前时间上增加1s</span><br><span class="line"></span><br><span class="line">            if (second &lt;= 10) txtTimer.color = Color.red;</span><br><span class="line">            if (second &lt;= 0) enabled = false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Time.deltaTime 实现</span><br><span class="line">    //试用场合：沿多个路点移动，每次到达路点等待一段时间。</span><br><span class="line">    private float totalTime = 0;</span><br><span class="line">    private void Timer2()</span><br><span class="line">    &#123;</span><br><span class="line">        //累加每帧消耗时间</span><br><span class="line">        totalTime += Time.deltaTime;</span><br><span class="line"></span><br><span class="line">        //如果1s</span><br><span class="line">        if (totalTime&gt;=1)</span><br><span class="line">        &#123;</span><br><span class="line">            second--;//119       1:59 </span><br><span class="line">            txtTimer.text = string.Format(&quot;&#123;0:d2&#125;:&#123;1:d2&#125;&quot;, second / 60, second % 60);</span><br><span class="line">            totalTime = 0;//清空累加的时间</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //InvokeRepeating 实现</span><br><span class="line">    //试用场合：计时器。每间隔固定时间 执行1次</span><br><span class="line">    private void Timer()</span><br><span class="line">    &#123;</span><br><span class="line">        second--;//119       1:59 </span><br><span class="line">        txtTimer.text = string.Format(&quot;&#123;0:d2&#125;:&#123;1:d2&#125;&quot;, second / 60, second % 60);</span><br><span class="line"></span><br><span class="line">        if (second &lt;= 0)</span><br><span class="line">            CancelInvoke(&quot;Timer&quot;);//取消调用</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/06/三种方法倒计时/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-递归寻找子物体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/06/递归寻找子物体/">Find Child</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/06/递归寻找子物体/" class="archive-article-date">
+  	<time datetime="2018-06-06T03:00:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Unity递归寻找子物体"><a href="#Unity递归寻找子物体" class="headerlink" title="Unity递归寻找子物体"></a>Unity递归寻找子物体</h2><p>Unity中寻找一个物体一般会使用通过Tag查找，但不可避免有一些特殊情况，比如寻找某个物体下的不常用的子物体、孙子物体等，<br>而Find方法只能找子物体，所以可以用递归的方法找到某个物体下的孙子物体。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static Transform FindChild(Transform trans, string goName)</span><br><span class="line">&#123;</span><br><span class="line">    Transform child = trans.Find(goName);</span><br><span class="line">    if (child != null)</span><br><span class="line">        return child;</span><br><span class="line"></span><br><span class="line">    Transform go = null;</span><br><span class="line">    for (int i = 0; i &lt; trans.childCount; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        child = trans.GetChild(i);</span><br><span class="line">        go = FindChild(child, goName);</span><br><span class="line">        if (go != null)</span><br><span class="line">            return go;</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/06/递归寻找子物体/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-场景淡入淡出" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -185,6 +372,69 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/06/06/场景淡入淡出/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-VedioImport" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/05/VedioImport/">Vedio</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/05/VedioImport/" class="archive-article-date">
+  	<time datetime="2018-06-05T10:38:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Unity视频导入"><a href="#Unity视频导入" class="headerlink" title="Unity视频导入"></a>Unity视频导入</h2><p>使用TheoraConverter软件将视频导入转成.ogv格式再直接放进Unity即可<br><img src="//Modr1c.github.io/2018/06/05/VedioImport/Vedio.jpg" alt="视频导入"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/05/VedioImport/">展开全文 >></a>
         </p>
       
 
@@ -290,6 +540,72 @@
 
 
   
+    <article id="post-协程Coroutine" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/05/协程Coroutine/">Coroutine</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/05/协程Coroutine/" class="archive-article-date">
+  	<time datetime="2018-05-05T00:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>协程：协同程序。<br>协程的使用前提：直接或间接的继承MonoBehavior才可以使用。</p>
+<p>不足：会产生外的开销。</p>
+<p>协程方法与普通方法的区别：<br>被调用时：普通方法被调用时，原来执行的部分保留现场，停止执行，然后去执行要调用的方法，并且，被调用的方法执行完之后才能返回到调用前的状态接着往下执行。。。协同方法的执行是不用等协同方法执行完再执行调用之前原来方法的代码。 而是两者异步执行。</p>
+<p>Unity中协程实现<br> Unity协程实现主要组成<br>    –IEnumerator接口提供迭代<br>    –yield return xxxx指定下一次迭代入口<br>        WaitForFixedUpdate在FixedUpdate后执行<br>                –适合于物理控制，<br>        null、0、WaitForSeconds在每帧Update后执行<br>                –适合于分多帧完成一个任务，如A*路径计算<br>        WaitForEndOfFrame在每帧结束后执行<br>                –适合于每帧末尾执行的操作，如相机的控制<br>        WWW  在请求结束后执行<br>                –适合于网络下载数据。<br>    –StartCoroutine开启协程</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/05/协程Coroutine/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
@@ -304,7 +620,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019-08-13 09:13:02 Modr1c
+    		&copy; 2019-08-14 10:55:45 Modr1c
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

@@ -151,6 +151,272 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-设计模式(行为型)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/17/设计模式(行为型)/">设计模式(行为型)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/17/设计模式(行为型)/" class="archive-article-date">
+  	<time datetime="2019-05-17T06:53:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="TEMPLATE-METHOD-模板方法"><a href="#TEMPLATE-METHOD-模板方法" class="headerlink" title="TEMPLATE METHOD(模板方法)*"></a>TEMPLATE METHOD(模板方法)*</h2><h3 id="定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。-TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。"><a href="#定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。-TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。" class="headerlink" title="定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。 TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。"></a>定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。 TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</h3><p>•  一次性实现一个算法的不变的部分，并将可变的行为留给子类来实现。<br>• 各子类中公共的行为应被提取出来并集中到一个公共父类中以避免代码重复。这是Opdyke和Johnson<br>所描述过的“重分解以一般化”的一个很好的例子。首先识别<br>现有代码中的不同之处，并且将不同之处分离为新的操作。最后，用一个调用这些新的操作的模板方法来替换这些不同的代码。<br>• 控制子类扩展。模板方法只在特定点调用”hook”操作，这样就只允许在这些点进行扩展。</p>
+<h2 id="STRATEGY-策略"><a href="#STRATEGY-策略" class="headerlink" title="STRATEGY(策略)"></a>STRATEGY(策略)</h2><h3 id="定义一系列的算法-把它们一个个封装起来-并形成一个一致的抽象-并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。"><a href="#定义一系列的算法-把它们一个个封装起来-并形成一个一致的抽象-并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。" class="headerlink" title="定义一系列的算法,把它们一个个封装起来,并形成一个一致的抽象,并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。"></a>定义一系列的算法,把它们一个个封装起来,并形成一个一致的抽象,并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。</h3><p>• 许多相关的类仅仅是行为有异。“策略”提供了一种用多个行为中的一个行为来配置一<br>个类的方法。<br>• 需要使用一个算法的不同变体。例如，你可能会定义一些反映不同的空间/时间权衡的<br>算法。当这些变体实现为一个算法的类层次时,可以使用策略模式。<br>• 算法使用客户不应该知道的数据。可使用策略模式以避免暴露复杂的、与算法相关的数<br>据结构。<br>• 一个类定义了多种行为,并且这些行为在这个类的操作中以多个条件语句的形式出现。<br>将相关的条件分支移入它们各自的STRATEGY类中以代替这些条件语句。</p>
+<h2 id="STATE-状态"><a href="#STATE-状态" class="headerlink" title="STATE(状态)"></a>STATE(状态)</h2><h3 id="允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类"><a href="#允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类" class="headerlink" title="允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类"></a>允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类</h3><p>• 一个对象的行为取决于它的状态,并且它必须在运行时刻根据状态改变它的行为。<br>• 一个操作中含有庞大的多分支的条件语句，且这些分支依赖于该对象的状态。这个状<br>态通常用一个或多个枚举常量表示。通常,有多个操作包含这一相同的条件结构。State<br>模式将每一个条件分支放入一个独立的类中。这使得你可以根据对象自身的情况将对<br>象的状态作为一个对象，这一对象可以不依赖于其他对象而独立变化</p>
+<h2 id="Observer-观察者"><a href="#Observer-观察者" class="headerlink" title="Observer(观察者)"></a>Observer(观察者)</h2><h3 id="定义对象间的一种一对多的依赖关系-当一个对象的状态发生改变时-所有依赖于它的对象都得到通知并被自动更新"><a href="#定义对象间的一种一对多的依赖关系-当一个对象的状态发生改变时-所有依赖于它的对象都得到通知并被自动更新" class="headerlink" title="定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并被自动更新"></a>定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并被自动更新</h3><p>• 当一个抽象模型有两个方面,其中一个方面依赖于另一方面。将这二者封装在独立的对象中以使它们可以各自独立地改变和复用。<br>• 当对一个对象的改变需要同时改变其它对象,而不知道具体有多少对象有待改变。<br>• 当一个对象必须通知其它对象，而它又不能假定其它对象是谁。换言之,你不希望这些对象是紧密耦合的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/17/设计模式(行为型)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-设计模式(结构型)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/17/设计模式(结构型)/">设计模式(结构型)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/17/设计模式(结构型)/" class="archive-article-date">
+  	<time datetime="2019-05-17T06:10:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Facade-外观、门面"><a href="#Facade-外观、门面" class="headerlink" title="Facade(外观、门面)*"></a>Facade(外观、门面)*</h2><h3 id="为子系统中的一组接口提供一个一致的界面，-Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。"><a href="#为子系统中的一组接口提供一个一致的界面，-Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。" class="headerlink" title="为子系统中的一组接口提供一个一致的界面， Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。"></a>为子系统中的一组接口提供一个一致的界面， Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</h3><p>• 当你要为一个复杂子系统提供一个简单接口时。子系统往往因为不断演化而变得越来越<br>复杂。大多数模式使用时都会产生更多更小的类。这使得子系统更具可重用性，也更容<br>易对子系统进行定制，但这也给那些不需要定制子系统的用户带来一些使用上的困难。<br>Facade可以提供一个简单的缺省视图，这一视图对大多数用户来说已经足够，而那些需<br>要更多的可定制性的用户可以越过Facade层。<br>• 客户程序与抽象类的实现部分之间存在着很大的依赖性。引入 Facade将这个子系统与客户以及其他的子系统分离，可以提高子系统的独立性和可移植性。<br>• 当你需要构建一个层次结构的子系统时，使用Facade模式定义子系统中每层的入口点。<br>如果子系统之间是相互依赖的，你可以让它们仅通过Facade进行通讯，从而简化了它们<br>之间的依赖关系。</p>
+<h2 id="Adapter-适配器"><a href="#Adapter-适配器" class="headerlink" title="Adapter(适配器)"></a>Adapter(适配器)</h2><h3 id="将一个类的接口转换成客户希望的另外一个接口。-Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作"><a href="#将一个类的接口转换成客户希望的另外一个接口。-Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作" class="headerlink" title="将一个类的接口转换成客户希望的另外一个接口。 Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作"></a>将一个类的接口转换成客户希望的另外一个接口。 Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作</h3><p>• 你想使用一个已经存在的类，而它的接口不符合你的需求。<br>• 你想创建一个可以复用的类，该类可以与其他不相关的类或不可预见的类（即那些接口可能不一定兼容的类）协同工作。<br>• （仅适用于对象Adapter）你想使用一些已经存在的子类，但是不可能对每一个都进行子类化以匹配它们的接口。对象适配器可以适配它的父类接口。</p>
+<h2 id="BRIDGE-桥接"><a href="#BRIDGE-桥接" class="headerlink" title="BRIDGE(桥接)"></a>BRIDGE(桥接)</h2><h3 id="将抽象部分-主体的成员-与它的实现部分分离，使它们都可以独立地变化"><a href="#将抽象部分-主体的成员-与它的实现部分分离，使它们都可以独立地变化" class="headerlink" title="将抽象部分(主体的成员)与它的实现部分分离，使它们都可以独立地变化"></a>将抽象部分(主体的成员)与它的实现部分分离，使它们都可以独立地变化</h3><p>• 你不希望在抽象和它的实现部分之间有一个固定的绑定关系。 例如这种情况可能是因为，<br>在程序运行时刻实现部分应可以被选择或者切换。<br>• 类的抽象以及它的实现都应该可以通过生成子类的方法加以扩充。这时BRIDGE<br>模式使你可以对不同的抽象接口和实现部分进行组合，并分别对它们进行扩充。<br>• 对一个抽象的实现部分的修改应对客户不产生影响，即客户的代码不必重新编译。<br>• 正如在意图一节的第一个类图中所示的那样，有许多类要生成。这样一种类层次结构说<br>明你必须将一个对象分解成两个部分。Rumbaugh称这种类层次结构为“嵌套的泛化”<br>（nested generalizations）。<br>• 你想在多个对象间共享实现（可能使用引用计数），但同时要求客户并不知道这一点。</p>
+<h2 id="COMPOSITE-组合"><a href="#COMPOSITE-组合" class="headerlink" title="COMPOSITE(组合)"></a>COMPOSITE(组合)</h2><h3 id="将对象组合成树形结构以表示“部分-整体”的层次结构。-COMPOSITE使得用户对单个对象和组合对象的使用具有一致性。"><a href="#将对象组合成树形结构以表示“部分-整体”的层次结构。-COMPOSITE使得用户对单个对象和组合对象的使用具有一致性。" class="headerlink" title="将对象组合成树形结构以表示“部分 -整体”的层次结构。 COMPOSITE使得用户对单个对象和组合对象的使用具有一致性。"></a>将对象组合成树形结构以表示“部分 -整体”的层次结构。 COMPOSITE使得用户对单个对象和组合对象的使用具有一致性。</h3><p>• 你想表示对象的部分 -整体层次结构。<br>• 你希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。</p>
+<h2 id="DECORATOR-装饰"><a href="#DECORATOR-装饰" class="headerlink" title="DECORATOR(装饰)"></a>DECORATOR(装饰)</h2><h3 id="动态地给一个对象添加一些额外的职责。就增加功能来说，DECORATOR模式相比生成子类更为灵活。"><a href="#动态地给一个对象添加一些额外的职责。就增加功能来说，DECORATOR模式相比生成子类更为灵活。" class="headerlink" title="动态地给一个对象添加一些额外的职责。就增加功能来说，DECORATOR模式相比生成子类更为灵活。"></a>动态地给一个对象添加一些额外的职责。就增加功能来说，DECORATOR模式相比生成子类更为灵活。</h3><p>•  在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。<br>•  处理那些可以撤消的职责。<br>•  当不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩展，为支持每一种组合将产生大量的子类，使得子类数目呈爆炸性增长。另一种情况可能是因为类定义被隐藏，或类定义不能用于生成子类。</p>
+<h2 id="PROXY-代理"><a href="#PROXY-代理" class="headerlink" title="PROXY(代理)"></a>PROXY(代理)</h2><h3 id="为其他对象提供一种代理以控制对这个对象的访问。"><a href="#为其他对象提供一种代理以控制对这个对象的访问。" class="headerlink" title="为其他对象提供一种代理以控制对这个对象的访问。"></a>为其他对象提供一种代理以控制对这个对象的访问。</h3><p>在需要用比较通用和复杂的对象指针代替简单的指针的时候，使用Proxy模式。下面是一些可以使用Proxy模式常见情况：<br>•  远程代理（Remote Proxy）为一个对象在不同的地址空间提供局部代表<br>•  虚代理（Virtual Proxy）根据需要创建开销很大的对象。<br>•  保护代理（Protection Proxy ）控制对原始对象的访问。保护代理用于对象应该有不同<br>的访问权限的时候。<br>•  智能指引(Smart Reference)取代了简单的指针，它在访问对象时执行一些附加操作。<br>•  当第一次引用一个持久对象时，将它装入内存。<br>•  在访问一个实际对象前，检查是否已经锁定了它，以确保其他对象不能改变它。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/17/设计模式(结构型)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/17/设计模式/">设计模式(创建型)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/17/设计模式/" class="archive-article-date">
+  	<time datetime="2019-05-17T05:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SINGLETON（单件，单例）"><a href="#SINGLETON（单件，单例）" class="headerlink" title="SINGLETON（单件，单例）*"></a>SINGLETON（单件，单例）*</h2><h3 id="保证一个类仅有一个实例，并提供一个访问它的全局访问点。"><a href="#保证一个类仅有一个实例，并提供一个访问它的全局访问点。" class="headerlink" title="保证一个类仅有一个实例，并提供一个访问它的全局访问点。"></a>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</h3><p>• 当类只能有一个实例而且客户可以从一个众所周知的访问点访问它时。<br>• 当这个唯一实例应该是通过子类化可扩展的，并且客户应该无需更改代码就能使用一个<br>扩展的实例时。</p>
+<h2 id="SimpleFactory-简单工厂"><a href="#SimpleFactory-简单工厂" class="headerlink" title="SimpleFactory(简单工厂)"></a>SimpleFactory(简单工厂)</h2><h3 id="定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离"><a href="#定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离" class="headerlink" title="定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离"></a>定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离</h3><p>• 当一个类不知道它所必须创建的对象的类的时候。<br>• 当类将创建对象的职责委托给一个全局创建点，客户不需要关心具体类型，需要对象的时候，找全局创建点即可.</p>
+<h2 id="AbstractFactory-抽象工厂"><a href="#AbstractFactory-抽象工厂" class="headerlink" title="AbstractFactory(抽象工厂)*"></a>AbstractFactory(抽象工厂)*</h2><h3 id="提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类"><a href="#提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类" class="headerlink" title="提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类"></a>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类</h3><p>•  一个系统要独立于它的产品的创建、组合和表示时。(创建与表示分离)<br>•  一个系统要由多个产品系列中的一个来配置时。(多系列中选一系列)<br>•  当你要强调一系列相关的产品对象的设计以便进行联合使用时。(同系列中多种产品)<br>•  当你提供一个产品类库，而只想显示它们的接口而不是实现时。(客户端依赖抽象)</p>
+<h2 id="Builder-建造器、生成器"><a href="#Builder-建造器、生成器" class="headerlink" title="Builder(建造器、生成器)"></a>Builder(建造器、生成器)</h2><h3 id="将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。"><a href="#将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。" class="headerlink" title="将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。"></a>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</h3><p>•  当创建复杂对象的算法应该独立于该对象的组成部分以及它们的装配方式时。<br>•  当构造过程必须允许被构造的对象有不同的表示时</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/17/设计模式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-设计模式(创建型)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/17/设计模式(创建型)/">设计模式(创建型)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/17/设计模式(创建型)/" class="archive-article-date">
+  	<time datetime="2019-05-17T05:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SINGLETON（单件，单例）"><a href="#SINGLETON（单件，单例）" class="headerlink" title="*SINGLETON（单件，单例）"></a>*SINGLETON（单件，单例）</h2><h3 id="保证一个类仅有一个实例，并提供一个访问它的全局访问点。"><a href="#保证一个类仅有一个实例，并提供一个访问它的全局访问点。" class="headerlink" title="保证一个类仅有一个实例，并提供一个访问它的全局访问点。"></a>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</h3><p>• 当类只能有一个实例而且客户可以从一个众所周知的访问点访问它时。<br>• 当这个唯一实例应该是通过子类化可扩展的，并且客户应该无需更改代码就能使用一个<br>扩展的实例时。</p>
+<h2 id="SimpleFactory-简单工厂"><a href="#SimpleFactory-简单工厂" class="headerlink" title="SimpleFactory(简单工厂)"></a>SimpleFactory(简单工厂)</h2><h3 id="定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离"><a href="#定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离" class="headerlink" title="定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离"></a>定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离</h3><p>• 当一个类不知道它所必须创建的对象的类的时候。<br>• 当类将创建对象的职责委托给一个全局创建点，客户不需要关心具体类型，需要对象的时候，找全局创建点即可.</p>
+<h2 id="AbstractFactory-抽象工厂"><a href="#AbstractFactory-抽象工厂" class="headerlink" title="*AbstractFactory(抽象工厂)"></a>*AbstractFactory(抽象工厂)</h2><h3 id="提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类"><a href="#提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类" class="headerlink" title="提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类"></a>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类</h3><p>•  一个系统要独立于它的产品的创建、组合和表示时。(创建与表示分离)<br>•  一个系统要由多个产品系列中的一个来配置时。(多系列中选一系列)<br>•  当你要强调一系列相关的产品对象的设计以便进行联合使用时。(同系列中多种产品)<br>•  当你提供一个产品类库，而只想显示它们的接口而不是实现时。(客户端依赖抽象)</p>
+<h2 id="Builder-建造器、生成器"><a href="#Builder-建造器、生成器" class="headerlink" title="Builder(建造器、生成器)"></a>Builder(建造器、生成器)</h2><h3 id="将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。"><a href="#将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。" class="headerlink" title="将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。"></a>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</h3><p>•  当创建复杂对象的算法应该独立于该对象的组成部分以及它们的装配方式时。<br>•  当构造过程必须允许被构造的对象有不同的表示时</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/17/设计模式(创建型)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-XML文件操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -613,269 +879,9 @@ public class SkinController : MonoBehaviour
 
 
   
-    <article id="post-文件系统与IO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/01/文件系统与IO/">Document</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/01/文件系统与IO/" class="archive-article-date">
-  	<time datetime="2018-07-01T00:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="文件系统与IO"><a href="#文件系统与IO" class="headerlink" title="文件系统与IO"></a>文件系统与IO</h2><h3 id="文件系统对应类-System-IO"><a href="#文件系统对应类-System-IO" class="headerlink" title="文件系统对应类 System.IO"></a>文件系统对应类 System.IO</h3><p>DriveInfo : 有关驱动器信息的类<br>主要方法：GetDrives 用于取得本计算机中所有驱动器信息对象<br>File: 有关对文件整体操作及内容读写的类</p>
-<p>整体操作：<br>Create :创建文件<br>Delete: 删除文件<br>Move：移动文件（剪切）<br>Copy: 复制文件<br>Exists: 检查设备中是否有该文件</p>
-<p>读写文件：<br>ReadAllText : 一次将文件中所有内容读入内存，并转为字符串<br>ReadAllLines: 一次将文件中所有内容读入内存，转为字符串，将字符串按行形成一个字符串数组<br>ReadLines: 并不会主动文件中的内容，只有再迭代时才读一行，每迭代一次向下读一行.<br>ReadAllBytes: 将文件中的内容一次读入内存，以字节数组的方式保存</p>
-<p>WriteAllText: 一次写入大段文本。<br>WriteAllLines: 每写一行之后写一个换行符.<br>WriteAllBytes: 一次写入大量字节</p>
-<p>FileInfo : 有关对文件整体操作及内容读写的类<br>与File不同的地方：比File类多一个Length属性,通过该属性可以了解一个文件所占有字节<br>Directory :有关对文件夹整体操作的类<br>常用方法：<br>CreateDirectory：创建文件夹<br>Delete:删除文件夹<br>Move:移动文件夹（不能跨驱动器移动）<br>GetFiles: 取得文件夹下所有的文件名<br>GetDirectoies:取得文件夹下所有的子文件夹的目录名称<br>Exists:检查某文件夹在设备中是否存在<br>DirectoryInfo 功能同Directory，只是所有成员为实例成员</p>
-<p>Path类，专用于对路径字符串的处理<br>常用方法：<br>GetFileName ：取得文件名及扩展名<br>GetFileNameWithOutExtension: 取得文件名不要扩展名<br>GetDirectoryName : 取得路径中目录的名称<br>Combine: 将多个字符串合并成为一个路径</p>
-<p>数据流 IO<br>Stream 流涉及三个基本操作：<br>1.可以读取流(Read)。读取是从流到数据结构（如字节数组）的数据传输。<br>2.可以写入流(Write)。写入是从数据结构到流的数据传输。<br>3.流可以支持查找(Seek、Position)。查找是对流内的当前位置进行的查询和修改。查找功能取决于流具有的后备存储区类型。例如，网络流没有当前位置的统一概念，因此一般不支持查找。</p>
-<p>FileStream FileMode<br>StreamReader：流内容读取器<br>    用于对数据流或本地文件简单的以字符的方式进行读取，<br>    常用方法：ReadLine Read ReadToEnd<br>StreamWriter：将内容写入流，写入器<br>    用于对数据流或本地文件简单的以字符的方式进行写入，<br>    常用方法：Write WriteLine</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/01/文件系统与IO/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-切点探测" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/切点探测/">Tangent Detector</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/13/切点探测/" class="archive-article-date">
-  	<time datetime="2018-06-13T01:28:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="切点探测器"><a href="#切点探测器" class="headerlink" title="切点探测器"></a>切点探测器</h2><p>寻找一个点到一个物体的切点，实际应用：<br>比如一个炸弹爆炸是否会对物体造成影响，可以判断通过爆炸点的与物体相切的射线是否打到物体决定物体是否受影响，<br>性能应该会比球型射线好。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 切点探测器</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class TangentDetector : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    private Vector3 leftTangent;</span><br><span class="line">    private Vector3 rightTangent;</span><br><span class="line"></span><br><span class="line">    private Transform playerTF;</span><br><span class="line">    private float radius;</span><br><span class="line">    private void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        GameObject playerGO = GameObject.FindWithTag(&quot;Player&quot;);</span><br><span class="line">        if (playerGO != null)</span><br><span class="line">        &#123;</span><br><span class="line">            playerTF = playerGO.transform;</span><br><span class="line">            radius = playerGO.GetComponent&lt;CapsuleCollider&gt;().radius;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            this.enabled = false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void CalaculateTangent()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 playerToExplosion = transform.position - playerTF.position;</span><br><span class="line">        Vector3 playerToExplosionRadius = playerToExplosion.normalized * radius;</span><br><span class="line">        float angle = Mathf.Acos(radius / playerToExplosion.magnitude) * Mathf.Rad2Deg;</span><br><span class="line">        rightTangent = playerTF.position + Quaternion.Euler(0, angle, 0) * playerToExplosionRadius;</span><br><span class="line">        leftTangent = playerTF.position + Quaternion.Euler(0, -angle, 0) * playerToExplosionRadius;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //**************测试**************</span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        CalaculateTangent();</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(transform.position, leftTangent);</span><br><span class="line">        Debug.DrawLine(transform.position, rightTangent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/13/切点探测/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-欧拉角和四元数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/欧拉角和四元数/">Euler And Quaternion</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/10/欧拉角和四元数/" class="archive-article-date">
-  	<time datetime="2018-06-10T09:33:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="欧拉角的使用"><a href="#欧拉角的使用" class="headerlink" title="欧拉角的使用"></a>欧拉角的使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// </span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class EulerDemo : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    public Vector3 euler;</span><br><span class="line">    private void OnGUI()</span><br><span class="line">    &#123;</span><br><span class="line">        euler = transform.eulerAngles;</span><br><span class="line"></span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿X轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            //Vector3 euler = transform.eulerAngles;</span><br><span class="line">            //欧拉角 没有 方向 和 大小的概念。</span><br><span class="line">            //x  y   z  沿某个轴的旋转角度 </span><br><span class="line">            transform.eulerAngles += Vector3.right;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿Y轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            transform.eulerAngles += Vector3.up;</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿Z轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            transform.eulerAngles += Vector3.forward;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="四元数的使用"><a href="#四元数的使用" class="headerlink" title="四元数的使用"></a>四元数的使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// </span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class QuaternionDemo : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    private void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        //物体沿Y轴旋转50度</span><br><span class="line">        Vector3 axis = Vector3.up;</span><br><span class="line">        float rad = 50 * Mathf.Deg2Rad;</span><br><span class="line">        Quaternion qt = new Quaternion</span><br><span class="line">        &#123;</span><br><span class="line">            x = Mathf.Sin(rad / 2) * axis.x,</span><br><span class="line">            y = Mathf.Sin(rad / 2) * axis.y,</span><br><span class="line">            z = Mathf.Sin(rad / 2) * axis.z,</span><br><span class="line">            w = Mathf.Cos(rad / 2)</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        //transform.rotation = qt;</span><br><span class="line">        transform.rotation = Quaternion.Euler(0, 50, 0);</span><br><span class="line"></span><br><span class="line">        Debug.Log(transform.eulerAngles);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //计算</span><br><span class="line">    private void OnGUI()</span><br><span class="line">    &#123; </span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿X轴旋转&quot;))</span><br><span class="line">        &#123;  </span><br><span class="line">            transform.rotation *= Quaternion.Euler(1, 0, 0);</span><br><span class="line">            //transform.Rotate(1, 0, 0); //Rotate通过四元数实现</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿Y轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            transform.rotation *= Quaternion.Euler(0, 1, 0);</span><br><span class="line">        &#125;</span><br><span class="line">        if (GUILayout.RepeatButton(&quot;沿Z轴旋转&quot;))</span><br><span class="line">        &#123;</span><br><span class="line">            transform.rotation *= Quaternion.Euler(0, 0, 1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        Demo01();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void Demo01()</span><br><span class="line">    &#123;  </span><br><span class="line">        //计算物体右前方30度10m处坐标</span><br><span class="line">        Vector3 worldPos =</span><br><span class="line">            transform.position + Quaternion.Euler(0, 30, 0) * transform.rotation * new Vector3(0, 0, 10);</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(transform.position, worldPos);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/10/欧拉角和四元数/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-简单的向量操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/简单的向量操作/">Vector</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/10/简单的向量操作/" class="archive-article-date">
-  	<time datetime="2018-06-10T07:23:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Unity简单的向量操作"><a href="#Unity简单的向量操作" class="headerlink" title="Unity简单的向量操作"></a>Unity简单的向量操作</h2><p>游戏中的各种位置判断需要常用到向量的操作的简单操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 向量</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class VectorDemo : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    public Transform t1, t2, t3;</span><br><span class="line"></span><br><span class="line">    private void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        Demo08();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //计算向量长度</span><br><span class="line">    private void Demo01()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 pos = transform.position;</span><br><span class="line">        float m1 = Mathf.Sqrt(Mathf.Pow(pos.x, 2) + Mathf.Pow(pos.y, 2) + Mathf.Pow(pos.z, 2));</span><br><span class="line">        float m2 = pos.magnitude;</span><br><span class="line">        print(m1 + &quot;----&quot; + m2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //计算向量方向</span><br><span class="line">    private void Demo02()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 pos = transform.position;</span><br><span class="line"></span><br><span class="line">        Vector3 n1 = pos / pos.magnitude;</span><br><span class="line">        Vector3 n2 = pos.normalized;</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(Vector3.zero, n1, Color.red);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //向量基本运算</span><br><span class="line">    private void Demo03()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 result = t1.position - t2.position;</span><br><span class="line">        //需求：t3 沿着 result 方向移动</span><br><span class="line">        if (Input.GetMouseButtonDown(0))</span><br><span class="line">            //t3.Translate(result.normalized);</span><br><span class="line">            t3.position = t3.position + result.normalized;</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(Vector3.zero, t1.position);</span><br><span class="line">        Debug.DrawLine(Vector3.zero, t2.position);</span><br><span class="line">        Debug.DrawLine(Vector3.zero, result, Color.red);</span><br><span class="line"></span><br><span class="line">        //已知向量a  长度为8.3m</span><br><span class="line">        //计算该方向 长度为1.5m的向量</span><br><span class="line">        //解决方案：将ａ向量标准化，　再乘以1.5</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //弧度与角度</span><br><span class="line">    private void Demo04()</span><br><span class="line">    &#123;</span><br><span class="line">        // f1角度=&gt;f2 弧度： 弧度=角度数*PI/180   </span><br><span class="line">        float f1 = 50;</span><br><span class="line">        float f2 = f1 * Mathf.PI / 180;</span><br><span class="line">        float f3 = f1 * Mathf.Deg2Rad;</span><br><span class="line">        // Mathf.Rad2Deg  弧度  ---&gt;  角度 </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //三角函数</span><br><span class="line">    private void Demo05()</span><br><span class="line">    &#123;</span><br><span class="line">        /*</span><br><span class="line">             sin x = a  /  c</span><br><span class="line">             a = c *  sin x;</span><br><span class="line">             c =  a / sin x; </span><br><span class="line">         */</span><br><span class="line">        //已知：角度x  边长 a</span><br><span class="line">        //计算：边长 c</span><br><span class="line">        float x = 50;</span><br><span class="line">        float a = 10;</span><br><span class="line">        float c = a / Mathf.Sin(x * Mathf.Deg2Rad);</span><br><span class="line"></span><br><span class="line">        //已知：边长 a  c</span><br><span class="line">        //计算：角度angle</span><br><span class="line">        float angle = Mathf.Asin(a / c) * Mathf.Rad2Deg;</span><br><span class="line"></span><br><span class="line">        print(angle);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //自身坐标  --&gt;  世界坐标</span><br><span class="line">    private void Demo06()</span><br><span class="line">    &#123;</span><br><span class="line">        Vector3 worldPos = transform.TransformPoint(1, 0, 0);</span><br><span class="line">        Debug.DrawLine(this.transform.position, worldPos);</span><br><span class="line"></span><br><span class="line">        //transform.forward   </span><br><span class="line">        //transform.up</span><br><span class="line">        //transform.right</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //练习</span><br><span class="line">    private void Demo07()</span><br><span class="line">    &#123;</span><br><span class="line">        //计算：前右方30度  10米处世界坐标 </span><br><span class="line">        Vector3 localPos = new Vector3(10 * Mathf.Sin(30 * Mathf.Deg2Rad), 0, 10 * Mathf.Cos(30 * Mathf.Deg2Rad));</span><br><span class="line">        Vector3 worldPos = transform.TransformPoint(localPos);</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(transform.position, worldPos);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public float angle;</span><br><span class="line">    //向量     向量</span><br><span class="line">    private void Demo08()</span><br><span class="line">    &#123;</span><br><span class="line">        //向量   + - 向量</span><br><span class="line">        //向量   *  / 数</span><br><span class="line">        //向量   (点乘)  (叉乘)    向量</span><br><span class="line">        //</span><br><span class="line"></span><br><span class="line">        //参与点乘运算的向量标准化后，结果为夹角的 cos 值</span><br><span class="line">        float dot = Vector3.Dot(t1.position.normalized, t2.position.normalized);</span><br><span class="line">        angle = Mathf.Acos(dot) * Mathf.Rad2Deg;</span><br><span class="line"></span><br><span class="line">        //if (angle &gt; 30)//比较角度</span><br><span class="line">        if (dot &lt; 0.866f)//比较cos值</span><br><span class="line">        &#123;</span><br><span class="line">            //如果夹角大于30度则</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Vector3 cross = Vector3.Cross(t1.position, t2.position);</span><br><span class="line">        if (cross.y &lt; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            angle = 360 - angle;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Debug.DrawLine(Vector3.zero, cross, Color.red);</span><br><span class="line">        Debug.DrawLine(Vector3.zero, t1.position);</span><br><span class="line">        Debug.DrawLine(Vector3.zero, t2.position);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/10/简单的向量操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -887,7 +893,7 @@ public class SkinController : MonoBehaviour
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019-08-27 13:04:09 Modr1c
+    		&copy; 2019-08-27 13:54:45 Modr1c
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

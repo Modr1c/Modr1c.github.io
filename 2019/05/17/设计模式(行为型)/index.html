@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://Modr1c.github.io">
-  <title>Archives: 2018/7 | Modr1c&#39;s Blog</title>
+  <title>设计模式(行为型) | Modr1c&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Modr1c&apos;s Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Modr1c&#39;s Blog">
-<meta property="og:url" content="http://Modr1c.github.io/archives/2018/07/index.html">
+  <meta name="description" content="TEMPLATE METHOD(模板方法)*定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。 TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。•  一次性实现一个算法的不变的部分，并将可变的行为留给子类来实现。• 各子类中公共的行为应被提取出来并集中到一个公共父类中以避免代码重复。这是Opdyke和Johnson所描述过的“重分解以一般化”的一个很">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式(行为型)">
+<meta property="og:url" content="http://Modr1c.github.io/2019/05/17/设计模式(行为型)/index.html">
 <meta property="og:site_name" content="Modr1c&#39;s Blog">
-<meta property="og:description" content="Modr1c&apos;s Blog">
+<meta property="og:description" content="TEMPLATE METHOD(模板方法)*定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。 TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。•  一次性实现一个算法的不变的部分，并将可变的行为留给子类来实现。• 各子类中公共的行为应被提取出来并集中到一个公共父类中以避免代码重复。这是Opdyke和Johnson所描述过的“重分解以一般化”的一个很">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-27T05:53:11.820Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Modr1c&#39;s Blog">
-<meta name="twitter:description" content="Modr1c&apos;s Blog">
+<meta name="twitter:title" content="设计模式(行为型)">
+<meta name="twitter:description" content="TEMPLATE METHOD(模板方法)*定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。 TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。•  一次性实现一个算法的不变的部分，并将可变的行为留给子类来实现。• 各子类中公共的行为应被提取出来并集中到一个公共父类中以避免代码重复。这是Opdyke和Johnson所描述过的“重分解以一般化”的一个很">
   
     <link rel="alternative" href="/atom.xml" title="Modr1c&#39;s Blog" type="application/atom+xml">
   
@@ -149,49 +150,169 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-设计模式(行为型)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/01/文件系统与IO/" class="archive-article-date">
-  	<time datetime="2018-07-01T00:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/01/文件系统与IO/">Document</a>
+    <h1 class="article-title" itemprop="name">
+      设计模式(行为型)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/05/17/设计模式(行为型)/" class="archive-article-date">
+  	<time datetime="2019-05-17T06:53:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="TEMPLATE-METHOD-模板方法"><a href="#TEMPLATE-METHOD-模板方法" class="headerlink" title="TEMPLATE METHOD(模板方法)*"></a>TEMPLATE METHOD(模板方法)*</h2><h3 id="定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。-TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。"><a href="#定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。-TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。" class="headerlink" title="定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。 TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。"></a>定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。 TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</h3><p>•  一次性实现一个算法的不变的部分，并将可变的行为留给子类来实现。<br>• 各子类中公共的行为应被提取出来并集中到一个公共父类中以避免代码重复。这是Opdyke和Johnson<br>所描述过的“重分解以一般化”的一个很好的例子。首先识别<br>现有代码中的不同之处，并且将不同之处分离为新的操作。最后，用一个调用这些新的操作的模板方法来替换这些不同的代码。<br>• 控制子类扩展。模板方法只在特定点调用”hook”操作，这样就只允许在这些点进行扩展。</p>
+<h2 id="STRATEGY-策略"><a href="#STRATEGY-策略" class="headerlink" title="STRATEGY(策略)"></a>STRATEGY(策略)</h2><h3 id="定义一系列的算法-把它们一个个封装起来-并形成一个一致的抽象-并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。"><a href="#定义一系列的算法-把它们一个个封装起来-并形成一个一致的抽象-并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。" class="headerlink" title="定义一系列的算法,把它们一个个封装起来,并形成一个一致的抽象,并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。"></a>定义一系列的算法,把它们一个个封装起来,并形成一个一致的抽象,并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。</h3><p>• 许多相关的类仅仅是行为有异。“策略”提供了一种用多个行为中的一个行为来配置一<br>个类的方法。<br>• 需要使用一个算法的不同变体。例如，你可能会定义一些反映不同的空间/时间权衡的<br>算法。当这些变体实现为一个算法的类层次时,可以使用策略模式。<br>• 算法使用客户不应该知道的数据。可使用策略模式以避免暴露复杂的、与算法相关的数<br>据结构。<br>• 一个类定义了多种行为,并且这些行为在这个类的操作中以多个条件语句的形式出现。<br>将相关的条件分支移入它们各自的STRATEGY类中以代替这些条件语句。</p>
+<h2 id="STATE-状态"><a href="#STATE-状态" class="headerlink" title="STATE(状态)"></a>STATE(状态)</h2><h3 id="允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类"><a href="#允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类" class="headerlink" title="允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类"></a>允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类</h3><p>• 一个对象的行为取决于它的状态,并且它必须在运行时刻根据状态改变它的行为。<br>• 一个操作中含有庞大的多分支的条件语句，且这些分支依赖于该对象的状态。这个状<br>态通常用一个或多个枚举常量表示。通常,有多个操作包含这一相同的条件结构。State<br>模式将每一个条件分支放入一个独立的类中。这使得你可以根据对象自身的情况将对<br>象的状态作为一个对象，这一对象可以不依赖于其他对象而独立变化</p>
+<h2 id="Observer-观察者"><a href="#Observer-观察者" class="headerlink" title="Observer(观察者)"></a>Observer(观察者)</h2><h3 id="定义对象间的一种一对多的依赖关系-当一个对象的状态发生改变时-所有依赖于它的对象都得到通知并被自动更新"><a href="#定义对象间的一种一对多的依赖关系-当一个对象的状态发生改变时-所有依赖于它的对象都得到通知并被自动更新" class="headerlink" title="定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并被自动更新"></a>定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并被自动更新</h3><p>• 当一个抽象模型有两个方面,其中一个方面依赖于另一方面。将这二者封装在独立的对象中以使它们可以各自独立地改变和复用。<br>• 当对一个对象的改变需要同时改变其它对象,而不知道具体有多少对象有待改变。<br>• 当一个对象必须通知其它对象，而它又不能假定其它对象是谁。换言之,你不希望这些对象是紧密耦合的。</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>￥功德箱￥<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://Modr1c.github.io/2019/05/17/设计模式(行为型)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/05/17/设计模式(结构型)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式(结构型)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -201,7 +322,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019-08-27 13:54:45 Modr1c
+    		&copy; 2019-08-27 13:54:46 Modr1c
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -214,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

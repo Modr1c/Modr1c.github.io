@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://Modr1c.github.io">
-  <title>Archives: 2018/7 | Modr1c&#39;s Blog</title>
+  <title>设计模式(创建型) | Modr1c&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Modr1c&apos;s Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Modr1c&#39;s Blog">
-<meta property="og:url" content="http://Modr1c.github.io/archives/2018/07/index.html">
+  <meta name="description" content="*SINGLETON（单件，单例）保证一个类仅有一个实例，并提供一个访问它的全局访问点。• 当类只能有一个实例而且客户可以从一个众所周知的访问点访问它时。• 当这个唯一实例应该是通过子类化可扩展的，并且客户应该无需更改代码就能使用一个扩展的实例时。 SimpleFactory(简单工厂)定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离• 当一个类不知道它所必须创建的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式(创建型)">
+<meta property="og:url" content="http://Modr1c.github.io/2019/05/17/设计模式(创建型)/index.html">
 <meta property="og:site_name" content="Modr1c&#39;s Blog">
-<meta property="og:description" content="Modr1c&apos;s Blog">
+<meta property="og:description" content="*SINGLETON（单件，单例）保证一个类仅有一个实例，并提供一个访问它的全局访问点。• 当类只能有一个实例而且客户可以从一个众所周知的访问点访问它时。• 当这个唯一实例应该是通过子类化可扩展的，并且客户应该无需更改代码就能使用一个扩展的实例时。 SimpleFactory(简单工厂)定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离• 当一个类不知道它所必须创建的">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-27T05:33:37.605Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Modr1c&#39;s Blog">
-<meta name="twitter:description" content="Modr1c&apos;s Blog">
+<meta name="twitter:title" content="设计模式(创建型)">
+<meta name="twitter:description" content="*SINGLETON（单件，单例）保证一个类仅有一个实例，并提供一个访问它的全局访问点。• 当类只能有一个实例而且客户可以从一个众所周知的访问点访问它时。• 当这个唯一实例应该是通过子类化可扩展的，并且客户应该无需更改代码就能使用一个扩展的实例时。 SimpleFactory(简单工厂)定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离• 当一个类不知道它所必须创建的">
   
     <link rel="alternative" href="/atom.xml" title="Modr1c&#39;s Blog" type="application/atom+xml">
   
@@ -149,49 +150,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-设计模式(创建型)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/01/文件系统与IO/" class="archive-article-date">
-  	<time datetime="2018-07-01T00:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/01/文件系统与IO/">Document</a>
+    <h1 class="article-title" itemprop="name">
+      设计模式(创建型)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/05/17/设计模式(创建型)/" class="archive-article-date">
+  	<time datetime="2019-05-17T05:18:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SINGLETON（单件，单例）"><a href="#SINGLETON（单件，单例）" class="headerlink" title="*SINGLETON（单件，单例）"></a>*SINGLETON（单件，单例）</h2><h3 id="保证一个类仅有一个实例，并提供一个访问它的全局访问点。"><a href="#保证一个类仅有一个实例，并提供一个访问它的全局访问点。" class="headerlink" title="保证一个类仅有一个实例，并提供一个访问它的全局访问点。"></a>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</h3><p>• 当类只能有一个实例而且客户可以从一个众所周知的访问点访问它时。<br>• 当这个唯一实例应该是通过子类化可扩展的，并且客户应该无需更改代码就能使用一个<br>扩展的实例时。</p>
+<h2 id="SimpleFactory-简单工厂"><a href="#SimpleFactory-简单工厂" class="headerlink" title="SimpleFactory(简单工厂)"></a>SimpleFactory(简单工厂)</h2><h3 id="定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离"><a href="#定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离" class="headerlink" title="定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离"></a>定义一个全局的工厂类，负责类型的选择及对象的创建初始化，从而实现将创建与表示分离</h3><p>• 当一个类不知道它所必须创建的对象的类的时候。<br>• 当类将创建对象的职责委托给一个全局创建点，客户不需要关心具体类型，需要对象的时候，找全局创建点即可.</p>
+<h2 id="AbstractFactory-抽象工厂"><a href="#AbstractFactory-抽象工厂" class="headerlink" title="*AbstractFactory(抽象工厂)"></a>*AbstractFactory(抽象工厂)</h2><h3 id="提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类"><a href="#提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类" class="headerlink" title="提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类"></a>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类</h3><p>•  一个系统要独立于它的产品的创建、组合和表示时。(创建与表示分离)<br>•  一个系统要由多个产品系列中的一个来配置时。(多系列中选一系列)<br>•  当你要强调一系列相关的产品对象的设计以便进行联合使用时。(同系列中多种产品)<br>•  当你提供一个产品类库，而只想显示它们的接口而不是实现时。(客户端依赖抽象)</p>
+<h2 id="Builder-建造器、生成器"><a href="#Builder-建造器、生成器" class="headerlink" title="Builder(建造器、生成器)"></a>Builder(建造器、生成器)</h2><h3 id="将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。"><a href="#将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。" class="headerlink" title="将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。"></a>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</h3><p>•  当创建复杂对象的算法应该独立于该对象的组成部分以及它们的装配方式时。<br>•  当构造过程必须允许被构造的对象有不同的表示时</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>￥功德箱￥<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/tags/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://Modr1c.github.io/2019/05/17/设计模式(创建型)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/05/17/设计模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          设计模式(创建型)
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/01/08/XML文件操作/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">XML</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -201,7 +331,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019-08-27 13:54:45 Modr1c
+    		&copy; 2019-08-27 13:54:46 Modr1c
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -214,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

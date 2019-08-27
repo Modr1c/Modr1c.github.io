@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://Modr1c.github.io">
-  <title>Archives: 2018/7 | Modr1c&#39;s Blog</title>
+  <title>Modr1c&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Modr1c&apos;s Blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Modr1c&#39;s Blog">
-<meta property="og:url" content="http://Modr1c.github.io/archives/2018/07/index.html">
+<meta property="og:url" content="http://Modr1c.github.io/page/3/index.html">
 <meta property="og:site_name" content="Modr1c&#39;s Blog">
 <meta property="og:description" content="Modr1c&apos;s Blog">
 <meta property="og:locale" content="default">
@@ -151,47 +151,153 @@
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-Unity画线" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/01/文件系统与IO/" class="archive-article-date">
-  	<time datetime="2018-07-01T00:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/01/文件系统与IO/">Document</a>
+      <a class="article-title" href="/2018/06/01/Unity画线/">Draw Line</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2018/06/01/Unity画线/" class="archive-article-date">
+  	<time datetime="2018-06-01T10:58:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Unity-几种画线方式"><a href="#Unity-几种画线方式" class="headerlink" title="Unity 几种画线方式"></a>Unity 几种画线方式</h2><h3 id="一、图形化调试"><a href="#一、图形化调试" class="headerlink" title="一、图形化调试"></a>一、图形化调试</h3><p>Unity中图形化调试主要4种</p>
+<p>1.Debug.Draw</p>
+<p>2.Gizmos.Draw</p>
+<p>3.Graphic.DrawMesh</p>
+<p>4.GL</p>
+<p>只需在Scene窗口显示的调试图像</p>
+<p>一直显示的 OnDrawGizmos + Gizmos.Draw</p>
+<p>选中显示的 OnDrawGizmosSelected + Gizmos.Draw</p>
+<p>脚本控制的 Update + Debug.Draw</p>
+<p>需要在实际设备屏幕显示的调试图像</p>
+<p>Update+Graphic.DrawMesh</p>
+<p>OnRenderObject+GL</p>
+<p>Graphic.DrawMesh和Debug.Draw   调用一致，都是在Update系里</p>
+<p>Graphic.DrawMesh和GL       显示类似，都在各个窗口显示，并且可以设置材质。</p>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/01/Unity画线/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
+    <article id="post-协程Coroutine" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
-    </div></section>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/05/协程Coroutine/">Coroutine</a>
+    </h1>
   
 
+        
+        <a href="/2018/05/05/协程Coroutine/" class="archive-article-date">
+  	<time datetime="2018-05-05T00:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h2><p>协程：协同程序。<br>协程的使用前提：直接或间接的继承MonoBehavior才可以使用。</p>
+<p>不足：会产生外的开销。</p>
+<p>协程方法与普通方法的区别：<br>被调用时：普通方法被调用时，原来执行的部分保留现场，停止执行，然后去执行要调用的方法，并且，被调用的方法执行完之后才能返回到调用前的状态接着往下执行。。。协同方法的执行是不用等协同方法执行完再执行调用之前原来方法的代码。 而是两者异步执行。</p>
+<p>Unity中协程实现<br> Unity协程实现主要组成<br>    –IEnumerator接口提供迭代<br>    –yield return xxxx指定下一次迭代入口<br>        WaitForFixedUpdate在FixedUpdate后执行<br>                –适合于物理控制，<br>        null、0、WaitForSeconds在每帧Update后执行<br>                –适合于分多帧完成一个任务，如A*路径计算<br>        WaitForEndOfFrame在每帧结束后执行<br>                –适合于每帧末尾执行的操作，如相机的控制<br>        WWW  在请求结束后执行<br>                –适合于网络下载数据。<br>    –StartCoroutine开启协程</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/05/协程Coroutine/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
+  
 
 
           </div>
@@ -201,7 +307,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019-08-27 13:54:45 Modr1c
+    		&copy; 2019-08-27 13:54:46 Modr1c
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -213,9 +319,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
